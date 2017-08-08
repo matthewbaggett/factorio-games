@@ -1,0 +1,3 @@
+FROM gone/factorio:0.15.32
+COPY twister/mods /factorio/mods
+COPY twister/scenarios /factorio/scenarios

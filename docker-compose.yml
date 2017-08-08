@@ -1,0 +1,21 @@
+version: '2'
+services:
+  vanilla:
+    image: gone/factorio:scenario-vanilla
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+  twister:
+    image: gone/factorio:scenario-twister
+    build:
+      context: .
+      dockerfile: Dockerfile.Twister
+    volumes:
+    - ./twister/mods:/factorio/mods
+    - ./twister/scenarios:/factorio/scenarios
+    ports:
+    - 34197:34197/udp
+    - 27015:27015/tcp
+
+
